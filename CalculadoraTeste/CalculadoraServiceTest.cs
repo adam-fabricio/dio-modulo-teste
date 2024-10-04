@@ -46,19 +46,14 @@ namespace CalculadoraTeste
         }
 
         [Theory]
-        [InlineData(2)]
-        [InlineData(4)]
-        [InlineData(6)]
-        [InlineData(8)]
-        [InlineData(10)]
-        [InlineData(12)]
-        public void DeveVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int num)
+        [InlineData(new int[] { 2, 4})]
+        [InlineData(new int[] { 6, 8, 104})]
+
+        public void DeveVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int[] nums)
         {
-            //Arrange
-            //Act
-            bool result = _calculadora.EhPar(num);
-            //Assert
-            Assert.True(result);
+
+            //Act / Assert
+            Assert.All(nums, num => Assert.True(_calculadora.EhPar(num)));
         }
 
 
