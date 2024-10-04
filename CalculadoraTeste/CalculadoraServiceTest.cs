@@ -45,6 +45,22 @@ namespace CalculadoraTeste
             Assert.True(result);
         }
 
+        [Theory]
+        [InlineData(2)]
+        [InlineData(4)]
+        [InlineData(6)]
+        [InlineData(8)]
+        [InlineData(10)]
+        [InlineData(12)]
+        public void DeveVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int num)
+        {
+            //Arrange
+            //Act
+            bool result = _calculadora.EhPar(num);
+            //Assert
+            Assert.True(result);
+        }
+
 
     }
 }
